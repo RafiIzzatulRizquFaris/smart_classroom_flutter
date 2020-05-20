@@ -14,7 +14,6 @@ class Attendance extends StatefulWidget {
 class AttendancePage extends State<Attendance> implements AttendContractView {
   List<DataBean> _list = List<DataBean>();
   AttendPresenter _attendPresenter;
-  var someString = "";
   var isLoading;
 
   AttendancePage() {
@@ -44,10 +43,19 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
                     elevation: 5,
                     child: Padding(
                       padding: EdgeInsets.all(5),
-                      child: Text(
-                        someString,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Attended",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "${countAttending(_list.where((element) => element.kehadiran == 0).length)}%",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -58,10 +66,19 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
                     elevation: 5,
                     child: Padding(
                       padding: EdgeInsets.all(5),
-                      child: Text(
-                        "Truant",
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Truant",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "${countAttending(_list.where((element) => element.kehadiran == 1).length)}%",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -72,10 +89,19 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
                     elevation: 5,
                     child: Padding(
                       padding: EdgeInsets.all(5),
-                      child: Text(
-                        "Permit",
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Permit",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "${countAttending(_list.where((element) => element.kehadiran == 2).length)}%",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -104,16 +130,19 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
     );
   }
 
+  String countAttending(int note) {
+    int totalStudent = _list.length;
+    double operation = note * 100 / totalStudent;
+    return operation.toString();
+  }
+
   @override
   setAttendance(List<DataBean> data) async {
-    if (data.isEmpty) {
-      print("object is empty");
-    } else {
+    if (data.isNotEmpty) {
       setState(() {
         _list = data;
-        someString = _list[0].keterangan;
         isLoading = false;
       });
-    }
+    }else print("object is empty");
   }
 }
