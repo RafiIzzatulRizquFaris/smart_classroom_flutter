@@ -143,6 +143,7 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
         _list = data;
         isLoading = false;
       });
-    }else print("object is empty");
+    } else
+      print("object is empty");
   }
 }
