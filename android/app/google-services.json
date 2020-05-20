@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "816276633980",
+    "firebase_url": "https://smart-classroom-31459.firebaseio.com",
+    "project_id": "smart-classroom-31459",
+    "storage_bucket": "smart-classroom-31459.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816276633980:android:543cbc2ff8009f272d8cf9",
+        "android_client_info": {
+          "package_name": "dev.quifar.smartclassroomflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816276633980-53patlkopfenuakvu2bp5fm47rulud59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUjeUtE-SCm7t39trfvnlXfs8wW49TFQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816276633980-53patlkopfenuakvu2bp5fm47rulud59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
