@@ -12,8 +12,11 @@ class CoursePage extends State<Course>{
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Center(
-        child: Text("Course"),
+      child: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text("Course"),
+        ),
       ),
     );
   }

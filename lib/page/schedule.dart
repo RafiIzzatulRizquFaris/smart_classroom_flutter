@@ -12,8 +12,11 @@ class SchedulePage extends State<Schedule>{
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Center(
-        child: Text("Schedule"),
+      child: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text("Schedule"),
+        ),
       ),
     );
   }
