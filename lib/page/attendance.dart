@@ -117,8 +117,16 @@ class AttendancePage extends State<Attendance> implements AttendContractView {
                       itemBuilder: (BuildContext context, int index) {
                         return Card(
                           child: ListTile(
-                            title: Text(_list[index].keterangan),
-                            leading: Text(_list[index].kehadiran.toString()),
+                            title: Text(_list[index].siswa.namaLengkap),
+                            subtitle: Text(_list[index].rfid.toString()),
+                            leading: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: _list[index].kehadiran == 0 ? Colors.green : Colors.red,
+                              ),
+                            ),
                           ),
                         );
                       },
