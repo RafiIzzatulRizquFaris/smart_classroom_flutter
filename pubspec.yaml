@@ -34,6 +34,7 @@ dependencies:
   path_provider: ^1.6.7
   sweetalert: ^0.0.1
   http: ^0.12.0+4
+  speech_to_text: ^2.2.0
 
 dev_dependencies:
   flutter_test:
